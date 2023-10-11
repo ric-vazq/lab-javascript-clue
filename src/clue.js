@@ -174,15 +174,13 @@ function pickMystery() {
 console.log(pickMystery());
 
 // ITERATION 3
-
-function revealMystery () {
-    let mystery = pickMystery();
-    let firstNameCaps = mystery.suspect.firstName.toUpperCase();
-    let lastNameCaps = mystery.suspect.lastName.toUpperCase();
-    let weaponCaps = mystery.weapon.name.toUpperCase();
-    let roomCaps = mystery.room.name.toUpperCase();
-    return `<${firstNameCaps}> <${lastNameCaps}> killed Mr. Boddy using the <${weaponCaps}> in the <${roomCaps}>!` 
+function revealMystery (envelope) {
+    let firstName = envelope.suspect.firstName;
+    let lastName = envelope.suspect.lastName;
+    let weapon = envelope.weapon.name;
+    let room = envelope.room.name;
+    return `${firstName} ${lastName} killed Mr. Boddy using the ${weapon} in the ${room}!` 
 }
 
-console.log(revealMystery()); //MONET XCHANGE killed Mr. Boddy using the WRENCH in the BALLROOM!
+console.log(revealMystery(pickMystery())); //MONET XCHANGE killed Mr. Boddy using the WRENCH in the BALLROOM!
 
